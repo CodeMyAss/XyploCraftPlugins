@@ -1,0 +1,29 @@
+name: Kitpvp
+main: xyplocraft.net.kitpvp.Kitpvp
+version: 0.1
+author: LoonyRules
+commands:
+    stats:
+      description: Check the stats of a player
+      usage: </command>
+    tpa:
+      description: Teleport to a player
+      usage: </command>
+    mode:
+      description: Change your mode
+      usage: </command>
+    tpdeny:
+      description: Deny a teleportation request
+      usage: </command>
+    tpaccept:
+      description: Accept a teleportation request
+      usage: </command>
+    spawn: 
+      description: Teleport to the spawn
+      usage: </command>
+    points:
+      description: Multiple features for points
+      usage: </command>
+    forcesd:
+      description: Force a supply drop to drop
+      usage: </command>
