@@ -1,0 +1,9 @@
+name: Hub
+main: xyplocraft.net.hub.Hub
+version: 0.1
+author: [LoonyRules, CodeBeasty]
+depend: [Bano]
+commands:
+    spawn:
+      description: Teleport back to spawn!
+      usage: </command>
