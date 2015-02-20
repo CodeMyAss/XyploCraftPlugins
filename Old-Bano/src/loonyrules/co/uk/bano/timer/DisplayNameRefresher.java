@@ -13,7 +13,7 @@ public class DisplayNameRefresher implements Runnable
 	public void run()
 	{
 		Bukkit.broadcastMessage("");
-		Bukkit.broadcastMessage(ChatColor.AQUA + "Database has refeshed; all name updates have been forced.");
+		Bukkit.broadcastMessage(ChatColor.AQUA + "Database Refreshing >> Forcing Name Updates!");
 		Bukkit.broadcastMessage("");
 		for(Player p : Bukkit.getOnlinePlayers())
 		{
