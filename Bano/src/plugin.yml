@@ -1,0 +1,35 @@
+name: Bano
+main: loonyrules.co.uk.bano.Core
+version: 1.0
+author: LoonyRules www.loonyrules.co.uk
+commands:
+    xraycheck:
+      description: Check on a players X-RAY stats
+      usage: /xraycheck <player>
+    setrank:
+      description: Set the rank of a player
+      usage: /setrank <player> <rank>
+    setpoints:
+      description: Set the points of a player
+      usage: /setpoints <player> <points>
+    ban:
+      description: Ban a player from the server
+      usage: /ban <player> <reason>
+    unban:
+      description: Unban a player from the server
+      usage: /unban <player>
+    pardon:
+      description: Unban a player from the server
+      usage: /pardon <player>
+    mute:
+      description: Mute/unmute a player
+      usage: /mute <player>
+    fly:
+      description: Enable/disable fly mode
+      usage: /<command>
+    bano:
+      description: Bano version
+      usage: /<command>
+    refreshdb:
+      description: Refresh the database
+      usage: /<command>

@@ -22,13 +22,13 @@ public class PlayerJoinEventListener implements Listener
 	@EventHandler(priority=EventPriority.HIGH)
 	public void onPlayerJoinEvent(PlayerJoinEvent e)
 	{
+		e.setJoinMessage(null);
 		Locations.teleportToSpawn(e.getPlayer());
 		Inventorys.setupMain(e.getPlayer());
 		for(Player p : Bukkit.getOnlinePlayers())
 		{
 			Scoreboards.setupMain(p);
 		}
-		e.setJoinMessage(null);
 	}
 	
 }

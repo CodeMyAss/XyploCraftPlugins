@@ -39,37 +39,37 @@ public class Strings
 	
 	public static String getNavigationSpawn()
 	{
-		return ChatColor.YELLOW + "▬▬▬► " + ChatColor.GREEN + "SPAWN" + ChatColor.YELLOW + " ◄▬▬▬";
+		return ChatColor.YELLOW + "▬▬► " + ChatColor.GREEN + "SPAWN" + ChatColor.YELLOW + " ◄▬▬";
 	}
 	
 	public static String getNavigationKitPvP()
 	{
-		return ChatColor.YELLOW + "▬▬▬► " + ChatColor.GOLD + "KITPVP" + ChatColor.YELLOW + " ◄▬▬▬";
+		return ChatColor.YELLOW + "▬▬► " + ChatColor.GOLD + "KITPVP" + ChatColor.YELLOW + " ◄▬▬";
 	}
 	
 	public static String getNavigationPrison()
 	{
-		return ChatColor.YELLOW + "▬▬▬► " + ChatColor.GRAY + "PRISON" + ChatColor.YELLOW + " ◄▬▬▬";
+		return ChatColor.YELLOW + "▬▬► " + ChatColor.GRAY + "PRISON" + ChatColor.YELLOW + " ◄▬▬";
 	}
 	
 	public static String getNavigationCreative()
 	{
-		return ChatColor.YELLOW + "▬▬▬► " + ChatColor.WHITE + "CREATIVE" + ChatColor.YELLOW + " ◄▬▬▬";
+		return ChatColor.YELLOW + "▬▬► " + ChatColor.WHITE + "CREATIVE" + ChatColor.YELLOW + " ◄▬▬";
 	}
 	
 	public static String getNavigationSurvivalGames()
 	{
-		return ChatColor.YELLOW + "▬▬▬► " + ChatColor.LIGHT_PURPLE + "SURVIVAL GAMES" + ChatColor.YELLOW + " ◄▬▬▬";
+		return ChatColor.YELLOW + "▬▬► " + ChatColor.LIGHT_PURPLE + "SURVIVAL GAMES" + ChatColor.YELLOW + " ◄▬▬";
 	}
 	
 	public static String getNavigationSkyWars()
 	{
-		return ChatColor.YELLOW + "▬▬▬► " + ChatColor.DARK_PURPLE + "SKY WARS" + ChatColor.YELLOW + " ◄▬▬▬";
+		return ChatColor.YELLOW + "▬▬► " + ChatColor.DARK_PURPLE + "SKY WARS" + ChatColor.YELLOW + " ◄▬▬";
 	}
 	
 	public static String getNavigationSkyBlock()
 	{
-		return ChatColor.YELLOW + "▬▬▬► " + ChatColor.BLUE + "SKY BLOCK" + ChatColor.YELLOW + " ◄▬▬▬";
+		return ChatColor.YELLOW + "▬▬► " + ChatColor.BLUE + "SKY BLOCK" + ChatColor.YELLOW + " ◄▬▬";
 	}
 	
 	/**
@@ -145,7 +145,7 @@ public class Strings
 	 * Scoreboard : START
 	 */
 	
-	protected static String scoreboardTitle = "" + ChatColor.YELLOW + "▬▬▬► " + ChatColor.GOLD + ChatColor.BOLD + "XyploCraft" + ChatColor.RESET + ChatColor.YELLOW + " ◄▬▬▬";
+	protected static String scoreboardTitle = "" + ChatColor.YELLOW + "▬▬► " + ChatColor.GOLD + ChatColor.BOLD + "XyploCraft" + ChatColor.RESET + ChatColor.YELLOW + " ◄▬▬";
 	
 	public static String getScoreboardTitle()
 	{

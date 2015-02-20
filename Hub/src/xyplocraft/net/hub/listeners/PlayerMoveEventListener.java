@@ -18,7 +18,7 @@ public class PlayerMoveEventListener implements Listener
 	{
 		if(e.getPlayer().getLocation().getWorld().getName().equals("hub"))
 		{
-			if(e.getPlayer().getLocation().getY() <= -3)
+			if(e.getPlayer().getLocation().getY() <= 19)
 			{
 				Locations.teleportToSpawn(e.getPlayer());
 			}

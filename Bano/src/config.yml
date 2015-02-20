@@ -1,0 +1,37 @@
+important:
+    ftp:
+      user: 'root'
+      pass: ''
+fly:
+  enabled: true
+  removeLists: 60
+  notifyInt: 2
+  notifyKMessage: '&a{name} &7was kicked for flying by Bano'
+  kickedMessage: '&7You were kicked for flying by Bano'
+  notifyDetectionMessage: '&c{name} might be using fly hacks.'
+  kickInt: 4
+ff:
+  enabled: true
+  removeLists: 10
+  notifyInt: 2
+  kickInt: 4
+  notifyKMessage: '&a{name} &7was kicked for using forcefield (or related) by Bano'
+  kickedMessage: '&7You were kicked for flying (or related) by Bano'
+  notifyDetectionMessage: '&c{name} might be using forcefield (or related).'
+xray:
+  enabled: true
+  removeLists: 300
+  detectionInt: 10
+anti-swear:
+  enabled: true
+  cancel: true
+  cancelMessage: '&cPlease do not swear.'
+  replace: '***'
+  banned:
+  - ip
+general:
+  mute-whitelist:
+  - LoonyRules
+  ban-whitelist:
+  - LoonyRules
+  stopWeather: true
