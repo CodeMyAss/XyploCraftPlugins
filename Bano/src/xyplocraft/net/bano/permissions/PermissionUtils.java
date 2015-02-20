@@ -5,9 +5,12 @@ import java.util.UUID;
 
 import org.bukkit.permissions.PermissionAttachment;
 
+import xyplocraft.net.bano.Bano;
+
 public class PermissionUtils
 {
 	
+	Bano main = Bano.getPlugin();
 	private static PermissionUtils pUtils = new PermissionUtils();
 	
 	public static PermissionUtils getPermissionUtils()
@@ -22,11 +25,28 @@ public class PermissionUtils
 		PermissionUtils.pUtils = pUtils;
 	}
 
+	public void registerClass()
+	{
+		/* We still need to register our Permission listeners and commands.*/
+		main.getPm().registerEvents(new PermissionPlayerQuitEventListener(), main);
+		main.getPm().registerEvents(new PermissionPlayerLoginEventListener(), main);
+		/*There we go, it's done now.*/
+	}
+	
+	
 	public static void storeNewAttachment(UUID uniqueId, PermissionAttachment attachment)
 	{
 		/* Storing a new player to our playerAttachments list */
 		HashMap<UUID, PermissionAttachment> currentPA = getPlayerAttachments();
 		currentPA.put(uniqueId, attachment);
+		setPlayerAttachments(currentPA);
+	}
+	
+	public  void removeAttachment(UUID uniqueId)
+	{
+		/* Removing a player from our playerAttachments list */
+		HashMap<UUID, PermissionAttachment> currentPA = getPlayerAttachments();
+		currentPA.remove(uniqueId);
 		setPlayerAttachments(currentPA);
 	}
 	
@@ -42,6 +62,35 @@ public class PermissionUtils
 	{
 		/* Setting the playerAttachments (Used in adding/removing players) */
 		PermissionUtils.playerAttachments = playerAttachments;
+	}
+	
+	public boolean clearPlayerAttachments()
+	{
+		boolean error = false;
+		try {
+			for(UUID uuid : getPlayerAttachments().keySet())
+			{
+				pUtils.removeAttachment(uuid);
+			}
+		} catch(Exception ex) {
+			ex.printStackTrace();
+			error = true;
+		}
+		
+		if(error)
+		{
+			return false;
+		} else return true;
+		
+	}
+
+	public boolean containsPlayerAttachment(UUID uuid)
+	{
+		if(getPlayerAttachments().containsKey(uuid))
+		{
+			return true;
+		}
+		return false;
 	}
 	
 }

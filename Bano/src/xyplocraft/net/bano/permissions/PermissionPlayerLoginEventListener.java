@@ -1,6 +1,7 @@
 package xyplocraft.net.bano.permissions;
 
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.permissions.PermissionAttachment;
@@ -12,7 +13,7 @@ public class PermissionPlayerLoginEventListener implements Listener
 	
 	Bano main = Bano.getPlugin();
 	
-	@EventHandler
+	@EventHandler(priority=EventPriority.MONITOR)
 	public void onPlayerPreLoginEventListener(PlayerLoginEvent e)
 	{
 		PermissionAttachment attachment = e.getPlayer().addAttachment(Bano.getPlugin());
