@@ -1,0 +1,8 @@
+name: Bano
+main: xyplocraft.net.bano.Bano
+version: 0.1
+author: LoonyRules
+commands:
+    perm:
+      description: Permission command
+      usage: /<command>

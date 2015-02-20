@@ -3,6 +3,9 @@ package xyplocraft.net.bano.permissions;
 import java.util.HashMap;
 import java.util.UUID;
 
+import org.bukkit.Bukkit;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import org.bukkit.permissions.PermissionAttachment;
 
 import xyplocraft.net.bano.Bano;
@@ -25,11 +28,20 @@ public class PermissionUtils
 		PermissionUtils.pUtils = pUtils;
 	}
 
+	@SuppressWarnings("deprecation")
 	public void registerClass()
 	{
 		/* We still need to register our Permission listeners and commands.*/
 		main.getPm().registerEvents(new PermissionPlayerQuitEventListener(), main);
 		main.getPm().registerEvents(new PermissionPlayerLoginEventListener(), main);
+		
+		main.getCommand("perm").setExecutor(new PermissionCommands());
+		
+		for(Player p : Bukkit.getOnlinePlayers())
+		{
+			PermissionAttachment attachment = p.addAttachment(Bano.getPlugin());
+			storeNewAttachment(p.getUniqueId(), attachment);
+		}
 		/*There we go, it's done now.*/
 	}
 	
@@ -66,6 +78,7 @@ public class PermissionUtils
 	
 	public boolean clearPlayerAttachments()
 	{
+		/* Safely removing everyone :) */
 		boolean error = false;
 		try {
 			for(UUID uuid : getPlayerAttachments().keySet())
@@ -86,9 +99,57 @@ public class PermissionUtils
 
 	public boolean containsPlayerAttachment(UUID uuid)
 	{
+		/* Checking if a player already has an Attachment */
 		if(getPlayerAttachments().containsKey(uuid))
 		{
 			return true;
+		}
+		return false;
+	}
+	
+	public static PermissionAttachment getPlayerPermissionAttachment(UUID uuid)
+	{
+		/* Getting an individuals PermissionAttachment */
+		if(pUtils.containsPlayerAttachment(uuid))
+		{
+			return getPlayerAttachments().get(uuid);
+		}
+		return null;
+	}
+
+	public void givePlayerPermission(UUID uniqueId, String string)
+	{
+		if(getPlayerPermissionAttachment(uniqueId) != null)
+		{
+			PermissionAttachment attachment = getPlayerPermissionAttachment(uniqueId);
+			attachment.setPermission(string,true);
+		}
+	}
+	
+	public void removePlayerPermission(UUID uniqueId, String string)
+	{
+		if(getPlayerPermissionAttachment(uniqueId) != null)
+		{
+			PermissionAttachment attachment = getPlayerPermissionAttachment(uniqueId);
+			attachment.unsetPermission(string);
+		}
+	}
+
+	public boolean hasPermission(CommandSender sender, String string)
+	{
+		if(sender.getName().equalsIgnoreCase("CONSOLE") || sender.isOp())
+		{
+			return true;
+		}
+		
+		Player p = (Player) sender;
+		if(containsPlayerAttachment(p.getUniqueId()))
+		{
+			PermissionAttachment attachment = getPlayerPermissionAttachment(p.getUniqueId());
+			if(attachment.getPermissions().containsKey(string))
+			{
+				return true;
+			}
 		}
 		return false;
 	}
