@@ -1,52 +1,65 @@
 package xyplocraft.net.bano;
 
-import org.bukkit.Bukkit;
+import net.nanon.networkutilities.plugin.PluginInstance;
+
 import org.bukkit.plugin.PluginManager;
-import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.scheduler.BukkitScheduler;
 
-import xyplocraft.net.bano.permissions.PermissionUtils;
+import xyplocraft.net.bano.permissions.PermissionsHandler;
 
-public class Bano extends JavaPlugin
-{
+public class Bano extends PluginInstance {
 	
-	private static Bano plugin;
-	private PluginManager pm;
-	BukkitScheduler bs;
-	PermissionUtils pUtils;
+	private PermissionsHandler permHandle;
 	
-	@Override
-	public void onEnable()
-	{
-		setPlugin(this);
-		setPm(Bukkit.getPluginManager());
-		bs = Bukkit.getScheduler();
-		pUtils = PermissionUtils.getPermissionUtils();
-		pUtils.registerClass();
+	public Bano(String plugin_name, String plugin_version, String[] plugin_contributors) {
+		super(plugin_name, plugin_version, plugin_contributors);
 	}
 
 	@Override
-	public void onDisable()
-	{
-		pUtils.clearPlayerAttachments();
+	public void onPluginInit() {
+		
+	}
+
+	@Override
+	public void onPluginEnable() {
+		
+	}
+
+	@Override
+	public void onPluginDisable() {
+		
+	}
+
+	@Override
+	public void registerListeners(PluginManager manager) {
+		
+	}
+
+	@Override
+	public void registerCommands(PluginManager manager) {
+		
+	}
+
+	@Override
+	public void registerTimers(PluginManager manager) {
+		
+	}
+}
+
+class References {
+	private final static String plugin_name = "Bano";
+	private final static String plugin_version = "0.1-Development";
+	
+	private final static String[] developers = new String[] {"LoonyRules", "Thecheatgamer1"};
+	
+	public static String getPluginName() {
+		return plugin_name;
 	}
 	
-	public static Bano getPlugin()
-	{
-		return plugin;
-	}
-
-	public static void setPlugin(Bano plugin)
-	{
-		Bano.plugin = plugin;
-	}
-
-	public PluginManager getPm() {
-		return pm;
-	}
-
-	public void setPm(PluginManager pm) {
-		this.pm = pm;
+	public static String getPluginVersion() {
+		return plugin_version;
 	}
 	
+	public static String[] getPluginDevelopers() {
+		return developers;
+	}
 }
